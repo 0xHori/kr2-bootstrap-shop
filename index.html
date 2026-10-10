@@ -11,13 +11,14 @@
 </head>
 
 <body>
+    <!-- Шапка страницы -->
     <header class="bg-primary text-white py-4">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-12 col-md-8">
-                    <h1 class="h3 mb-1">Bootstrap Shop</h1>
+                    <h1 class="h3 mb-1">CuteRock Vinyl</h1>
                     <p class="mb-0 opacity-75">
-                        Учебный интернет-магазин на Bootstrap
+                        Музыкальный дистро-магазин и поставщик винила для цеховых будней
                     </p>
                 </div>
 
@@ -29,9 +30,11 @@
             </div>
         </div>
     </header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+    <!-- Навигационная панель -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Bootstrap Shop</a>
+            <a class="navbar-brand fw-bold" href="index.html">CuteRock Vinyl</a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
                 aria-controls="mainNavbar" aria-expanded="false" aria-label="Переключить навигацию">
@@ -43,29 +46,38 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="index.html">Главная</a>
                     </li>
-
                     <li class="nav-item">
                         <a class="nav-link" href="catalog.html">Каталог</a>
                     </li>
-
                     <li class="nav-item">
                         <a class="nav-link" href="product.html">Товар</a>
                     </li>
-
                     <li class="nav-item">
                         <a class="nav-link" href="order.html">Заявка</a>
                     </li>
-
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacts.html">Контакты</a>
+                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
                             Дополнительно
                         </a>
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu dropdown-menu-end">
                             <li><a class="dropdown-item" href="catalog.html">Все товары</a></li>
                             <li><a class="dropdown-item" href="order.html">Оформить заявку</a></li>
                             <li><a class="dropdown-item" href="index.html#popular">Популярное</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="contacts.html">Контакты и поддержка</a></li>
                         </ul>
+                    </li>
+                    <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+                        <a class="btn btn-outline-light btn-sm d-flex align-items-center gap-2" href="order.html">
+                            <span>Корзина</span>
+                            <span class="badge bg-danger">1</span>
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -73,6 +85,7 @@
     </nav>
 
     <main>
+        <!-- Hero-блок с каруселью (самостоятельная доработка) -->
         <section class="container my-5">
             <div class="row align-items-center g-4">
                 <div class="col-12 col-lg-6">
@@ -80,133 +93,265 @@
                         Учебный каталог товаров на Bootstrap
                     </h2>
                     <p class="lead text-muted">
-                        Проект демонстрирует использование Bootstrap-сетки,
-                        адаптивных колонок и базовых utility-классов.
+                        Проект демонстрирует использование 12-колоночной сетки Bootstrap,
+                        адаптивных компонентов, локального подключения вендоров и расширенной структуры.
                     </p>
-                    <a class="btn btn-primary btn-lg" href="catalog.html">
-                        Перейти в каталог
-                    </a>
+                    <div class="d-flex gap-3 flex-wrap">
+                        <a class="btn btn-primary btn-lg" href="catalog.html">
+                            Перейти в каталог
+                        </a>
+                        <a class="btn btn-outline-secondary btn-lg" href="order.html">
+                            Быстрая заявка
+                        </a>
+                    </div>
                 </div>
 
                 <div class="col-12 col-lg-6">
-                    <div class="p-5 bg-light border rounded text-center">
-                        <p class="mb-0 text-muted">
-                            Здесь может быть изображение, баннер или промо-блок.
-                        </p>
+                    <!-- Bootstrap Carousel: Дора & Заводская эстетика -->
+                    <div id="heroCarousel" class="carousel slide rounded shadow-sm overflow-hidden"
+                        data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"
+                                aria-current="true" aria-label="Слайд 1"></button>
+                            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"
+                                aria-label="Слайд 2"></button>
+                            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"
+                                aria-label="Слайд 3"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active bg-primary text-white p-5 text-center">
+                                <div class="carousel-content py-4">
+                                    <h3 class="h4 fw-bold">Боже, храни кьют-рок на виниле</h3>
+                                    <p class="mb-3">Единственный релиз, способный растопить сердце токаря 6-го разряда.
+                                    </p>
+                                    <span class="badge bg-light text-primary">Главный релиз смены</span>
+                                </div>
+                            </div>
+                            <div class="carousel-item bg-dark text-white p-5 text-center">
+                                <div class="carousel-content py-4">
+                                    <h3 class="h4 fw-bold">Розовый винил в суровые будни</h3>
+                                    <p class="mb-3">Оригинальное издание 2020 года. Полный треклист, включая «Втюрилась»
+                                        и «Быть с тобой».</p>
+                                    <span class="badge bg-warning text-dark">Хит цеха</span>
+                                </div>
+                            </div>
+                            <div class="carousel-item bg-secondary text-white p-5 text-center">
+                                <div class="carousel-content py-4">
+                                    <h3 class="h4 fw-bold">Отправка быстрее, чем кончается смена</h3>
+                                    <p class="mb-3">Бронируй в один клик через модальное окно. Доставляем в бронебойной
+                                        упаковке.</p>
+                                    <span class="badge bg-success">Ударные темпы</span>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-label="Предыдущий"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-label="Следующий"></span>
+                        </button>
                     </div>
                 </div>
             </div>
         </section>
+
+        <!-- Преимущества магазина -->
         <section class="container my-5">
-            <h2 class="text-center mb-4">Преимущества проекта</h2>
+            <h2 class="text-center mb-4">Стандарты нашего дистро</h2>
 
             <div class="row g-4">
                 <div class="col-12 col-md-4">
-                    <div class="p-4 border rounded h-100 bg-white">
-                        <h3 class="h5">Bootstrap-сетка</h3>
+                    <div class="p-4 border rounded h-100 bg-white shadow-sm">
+                        <h3 class="h5 text-primary">Бронебойная упаковка</h3>
                         <p class="mb-0 text-muted">
-                            Страница построена на 12-колоночной системе Bootstrap.
+                            Тройной гофрокартон и воздушные демпферы. Конверты доезжают без замятых углов даже в самые суровые условия.
                         </p>
                     </div>
                 </div>
 
                 <div class="col-12 col-md-4">
-                    <div class="p-4 border rounded h-100 bg-white">
-                        <h3 class="h5">Адаптивность</h3>
+                    <div class="p-4 border rounded h-100 bg-white shadow-sm">
+                        <h3 class="h5 text-primary">Тяжёлый 180g винил</h3>
                         <p class="mb-0 text-muted">
-                            Колонки меняют ширину в зависимости от размера экрана.
+                            Официальные штамповки и лимитированные цветные прессы без заводского брака и фонового треска.
                         </p>
                     </div>
                 </div>
 
                 <div class="col-12 col-md-4">
-                    <div class="p-4 border rounded h-100 bg-white">
-                        <h3 class="h5">Готовая база</h3>
+                    <div class="p-4 border rounded h-100 bg-white shadow-sm">
+                        <h3 class="h5 text-primary">Логистика без задержек</h3>
                         <p class="mb-0 text-muted">
-                            Проект подготовлен к добавлению карточек, форм и модальных окон.
+                            Быстрая сборка и доставка день в день прямо до проходной или удобного пункта выдачи.
                         </p>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="container my-5">
-            <div class="d-flex justify-content-between align-items-center mb-4">
-                <h2 class="mb-0">Популярные товары</h2>
+
+        <!-- Популярные альбомы с id="popular" -->
+        <section class="container my-5" id="popular">
+            <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+                <h2 class="mb-0">Популярные релизы</h2>
                 <a class="btn btn-outline-primary" href="catalog.html">
-                    Все товары
+                    Все альбомы &rarr;
                 </a>
             </div>
 
             <div class="row g-4">
+                <!-- Альбом 1: Дора -->
                 <div class="col-12 col-md-6 col-lg-4">
-                    <div class="border rounded h-100 p-4">
-                        <span class="badge bg-success mb-3">Новинка</span>
-                        <h3 class="h5">Товар 1</h3>
-                        <p class="text-muted">
-                            Краткое описание учебного товара.
-                        </p>
-                        <p class="fw-bold mb-3">1000 руб.</p>
-                        <a class="btn btn-primary" href="product.html">
-                            Подробнее
-                        </a>
+                    <div class="card h-100 shadow-sm border-0 border-top border-4 border-warning">
+                        <img src="images/album-1.jpg" class="card-img-top" alt="Дора — Боже, храни кьют-рок">
+                        <div class="card-body d-flex flex-column">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h3 class="card-title h5 mb-0">Дора</h3>
+                                <span class="badge bg-warning text-dark">Хит цеха</span>
+                            </div>
+                            <p class="text-primary fw-semibold small mb-1">Боже, храни кьют-рок (2020)</p>
+                            <p class="card-text text-muted small">
+                                Прорывной альбом на розовом виниле. Проверенное средство для восстановления сил после
+                                смены.
+                            </p>
+                            <p class="fw-bold fs-5 mt-auto text-primary">3 490 руб.</p>
+                            <div class="d-flex gap-2">
+                                <a class="btn btn-primary w-50" href="product.html">Подробнее</a>
+                                <button class="btn btn-outline-primary w-50" type="button" data-bs-toggle="modal"
+                                    data-bs-target="#orderModal">
+                                    Заказать
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
+                <!-- Альбом 5: Linkin Park -->
                 <div class="col-12 col-md-6 col-lg-4">
-                    <div class="border rounded h-100 p-4">
-                        <span class="badge bg-warning text-dark mb-3">Хит</span>
-                        <h3 class="h5">Товар 2</h3>
-                        <p class="text-muted">
-                            Краткое описание учебного товара.
-                        </p>
-                        <p class="fw-bold mb-3">1500 руб.</p>
-                        <a class="btn btn-primary" href="product.html">
-                            Подробнее
-                        </a>
+                    <div class="card h-100 shadow-sm border-0 border-top border-4 border-primary">
+                        <img src="images/album-5.jpg" class="card-img-top" alt="Linkin Park — From Zero">
+                        <div class="card-body d-flex flex-column">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h3 class="card-title h5 mb-0">Linkin Park</h3>
+                                <span class="badge bg-primary">Эксклюзив</span>
+                            </div>
+                            <p class="text-primary fw-semibold small mb-1">From Zero (2024)</p>
+                            <p class="card-text text-muted small">
+                                Возвращение легенд на прозрачно-голубом виниле. Мощные риффы и свежий альтернативный
+                                звук.
+                            </p>
+                            <p class="fw-bold fs-5 mt-auto text-primary">4 990 руб.</p>
+                            <div class="d-flex gap-2">
+                                <a class="btn btn-primary w-50" href="product.html">Подробнее</a>
+                                <button class="btn btn-outline-primary w-50" type="button" data-bs-toggle="modal"
+                                    data-bs-target="#orderModal">
+                                    Заказать
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
+                <!-- Альбом 6: Сектор Газа -->
                 <div class="col-12 col-md-6 col-lg-4">
-                    <div class="border rounded h-100 p-4">
-                        <span class="badge bg-danger mb-3">Скидка</span>
-                        <h3 class="h5">Товар 3</h3>
-                        <p class="text-muted">
-                            Краткое описание учебного товара.
-                        </p>
-                        <p class="fw-bold mb-3">2000 руб.</p>
-                        <a class="btn btn-primary" href="product.html">
-                            Подробнее
-                        </a>
+                    <div class="card h-100 shadow-sm border-0 border-top border-4 border-danger">
+                        <img src="images/album-6.jpg" class="card-img-top" alt="Сектор Газа — Гуляй, мужик!">
+                        <div class="card-body d-flex flex-column">
+                            <div class="d-flex justify-content-between align-items-start mb-2">
+                                <h3 class="card-title h5 mb-0">Сектор Газа</h3>
+                                <span class="badge bg-danger">Скидка</span>
+                            </div>
+                            <p class="text-primary fw-semibold small mb-1">Гуляй, мужик! (1992)</p>
+                            <p class="card-text text-muted small">
+                                Канонический панк-рок на 180-граммовом виниле. Народная классика вне времени и моды.
+                            </p>
+                            <p class="fw-bold fs-5 mt-auto text-primary">3 990 руб.</p>
+                            <div class="d-flex gap-2">
+                                <a class="btn btn-primary w-50" href="product.html">Подробнее</a>
+                                <button class="btn btn-outline-primary w-50" type="button" data-bs-toggle="modal"
+                                    data-bs-target="#orderModal">
+                                    Заказать
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
-
     </main>
+
+    <!-- Модальное окно быстрой заявки -->
+    <div class="modal fade" id="orderModal" tabindex="-1" aria-labelledby="orderModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 class="modal-title h5" id="orderModalLabel">
+                        Быстрая заявка
+                    </h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                </div>
+
+                <div class="modal-body">
+                    <p class="text-muted small">
+                        Оставьте контактные данные, и менеджер свяжется с вами в течение 15 минут.
+                    </p>
+
+                    <form>
+                        <div class="mb-3">
+                            <label for="modal-name" class="form-label">Имя</label>
+                            <input id="modal-name" type="text" class="form-control" placeholder="Андрей Савченко"
+                                required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="modal-phone" class="form-label">Телефон</label>
+                            <input id="modal-phone" type="tel" class="form-control" placeholder="+7 (900) 000-00-00"
+                                required>
+                        </div>
+
+                        <div class="form-check mb-3">
+                            <input id="modal-agree" class="form-check-input" type="checkbox" required>
+                            <label class="form-check-label" for="modal-agree">
+                                Согласен на обработку персональных данных
+                            </label>
+                        </div>
+                        <div class="modal-footer px-0 pb-0">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                Закрыть
+                            </button>
+                            <button type="submit" class="btn btn-primary">
+                                Отправить заявку
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Единый подвал -->
     <footer class="bg-dark text-white py-4 mt-5">
         <div class="container">
             <div class="row align-items-center g-3">
                 <div class="col-12 col-md-6">
-                    <p class="mb-0">
-                        &copy; 2026 Bootstrap Shop. Учебный проект.
+                    <p class="mb-1 fw-bold">Bootstrap Shop &copy; 2026</p>
+                    <p class="mb-0 text-white-50 small">
+                        Выполнил: Савченко Андрей Павлович (ЭФБО-08-25). Учебный проект КР №2.
                     </p>
                 </div>
 
                 <div class="col-12 col-md-6 text-md-end">
-                    <a class="text-white text-decoration-none me-3" href="catalog.html">
-                        Каталог
-                    </a>
-                    <a class="text-white text-decoration-none" href="order.html">
-                        Заявка
-                    </a>
+                    <a class="text-white text-decoration-none me-3" href="index.html">Главная</a>
+                    <a class="text-white text-decoration-none me-3" href="catalog.html">Каталог</a>
+                    <a class="text-white text-decoration-none me-3" href="order.html">Заявка</a>
+                    <a class="text-white text-decoration-none" href="contacts.html">Контакты</a>
                 </div>
             </div>
         </div>
     </footer>
 
-
-
-
+    <!-- Bootstrap JS Bundle (локальный) -->
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 </body>
 

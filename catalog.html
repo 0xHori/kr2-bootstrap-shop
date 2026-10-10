@@ -8,13 +8,13 @@
 
     <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/custom.css">
-
 </head>
 
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<body class="bg-light">
+    <!-- Навигационная панель -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Bootstrap Shop</a>
+            <a class="navbar-brand fw-bold" href="index.html">CuteRock Vinyl</a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
                 aria-controls="mainNavbar" aria-expanded="false" aria-label="Переключить навигацию">
@@ -26,90 +26,111 @@
                     <li class="nav-item">
                         <a class="nav-link" href="index.html">Главная</a>
                     </li>
-
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="catalog.html">Каталог</a>
                     </li>
-
                     <li class="nav-item">
                         <a class="nav-link" href="product.html">Товар</a>
                     </li>
-
                     <li class="nav-item">
                         <a class="nav-link" href="order.html">Заявка</a>
                     </li>
-
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacts.html">Контакты</a>
+                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
                             Дополнительно
                         </a>
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu dropdown-menu-end">
                             <li><a class="dropdown-item" href="catalog.html">Все товары</a></li>
                             <li><a class="dropdown-item" href="order.html">Оформить заявку</a></li>
                             <li><a class="dropdown-item" href="index.html#popular">Популярное</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="contacts.html">Контакты и поддержка</a></li>
                         </ul>
+                    </li>
+                    <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+                        <a class="btn btn-outline-light btn-sm d-flex align-items-center gap-2" href="order.html">
+                            <span>Корзина</span>
+                            <span class="badge bg-danger">1</span>
+                        </a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
+
     <main class="container my-5">
-        <div class="alert alert-info" role="alert">
-            Выберите товар из каталога. Карточки товаров оформлены с помощью компонента Bootstrap `card`.
+        <!-- Информационный алерт -->
+        <div class="alert alert-info alert-dismissible fade show shadow-sm" role="alert">
+            <strong>Каталог товаров:</strong> используйте карточки Bootstrap <code>card</code>, фильтрацию и форму
+            быстрого заказа через модальное окно.
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Закрыть"></button>
         </div>
 
-        <div class="d-flex justify-content-between align-items-center mb-4">
-            <h1 class="h2 mb-0">Каталог товаров</h1>
+        <!-- Заголовок и кнопка заявки -->
+        <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2">
+            <div>
+                <h1 class="h2 mb-1">Каталог товаров</h1>
+                <p class="text-muted small mb-0">Всего релизов: 6 альбомов на виниле и CD</p>
+            </div>
             <a class="btn btn-outline-primary" href="order.html">
                 Оставить заявку
             </a>
         </div>
 
-        <div class="row g-4">
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="card h-100 shadow-sm">
-                    <div class="card-body d-flex flex-column">
-                        <div class="d-flex justify-content-between align-items-start mb-3">
-                            <h2 class="card-title h5">Товар 1</h2>
-                            <span class="badge bg-success">Новинка</span>
-                        </div>
-
-                        <p class="card-text text-muted">
-                            Краткое описание учебного товара для каталога.
-                        </p>
-
-                        <p class="fw-bold fs-5 mt-auto">1000 руб.</p>
-
-                        <div class="d-flex gap-2">
-                            <a class="btn btn-primary" href="product.html">Подробнее</a>
-                            <button class="btn btn-outline-primary" type="button" data-bs-toggle="modal"
-                                data-bs-target="#orderModal">
-                                Заказать
-                            </button>
-                        </div>
+        <!-- Самостоятельная доработка: Панель фильтров и сортировки -->
+        <div class="card shadow-sm border-0 mb-4">
+            <div class="card-body">
+                <form class="row g-3 align-items-center">
+                    <div class="col-12 col-md-4">
+                        <label class="form-label small text-muted mb-1" for="filter-category">Категория</label>
+                        <select class="form-select form-select-sm" id="filter-category">
+                            <option selected>Все жанры</option>
+                            <option value="1">Рок и метал</option>
+                            <option value="2">Инди и поп</option>
+                            <option value="3">Панк и альтернатива</option>
+                        </select>
                     </div>
-                </div>
+                    <div class="col-12 col-md-4">
+                        <label class="form-label small text-muted mb-1" for="sort-price">Сортировка</label>
+                        <select class="form-select form-select-sm" id="sort-price">
+                            <option selected>По умолчанию</option>
+                            <option value="asc">Сначала недорогие</option>
+                            <option value="desc">Сначала премиум</option>
+                        </select>
+                    </div>
+                    <div class="col-12 col-md-4 d-flex align-items-end gap-2 pt-2 pt-md-0">
+                        <button type="button" class="btn btn-sm btn-primary flex-grow-1">Применить фильтр</button>
+                        <button type="reset" class="btn btn-sm btn-outline-secondary">Сброс</button>
+                    </div>
+                </form>
             </div>
+        </div>
 
+        <!-- Сетка товаров (6 альбомов) -->
+        <div class="row g-4">
+            <!-- Альбом 1 -->
             <div class="col-12 col-md-6 col-lg-4">
-                <div class="card h-100 shadow-sm">
+                <div class="card h-100 shadow-sm border-0">
+                    <img src="images/album-1.jpg" class="card-img-top" alt="Дора — Боже, храни кьют-рок">
                     <div class="card-body d-flex flex-column">
-                        <div class="d-flex justify-content-between align-items-start mb-3">
-                            <h2 class="card-title h5">Товар 2</h2>
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h2 class="card-title h5 mb-0">Дора</h2>
                             <span class="badge bg-warning text-dark">Хит</span>
                         </div>
-
-                        <p class="card-text text-muted">
-                            Краткое описание второго учебного товара.
+                        <p class="text-primary fw-semibold small mb-1">Боже, храни кьют-рок (2020)</p>
+                        <p class="card-text text-muted small">
+                            Прорывной альбом певицы с треками «Втюрилась» и «Быть с тобой». Цветной розовый винил.
                         </p>
-
-                        <p class="fw-bold fs-5 mt-auto">1500 руб.</p>
-
+                        <p class="fw-bold fs-5 mt-auto text-primary">3 490 руб.</p>
                         <div class="d-flex gap-2">
-                            <a class="btn btn-primary" href="product.html">Подробнее</a>
-                            <button class="btn btn-outline-primary" type="button" data-bs-toggle="modal"
-                                data-bs-target="#orderModal">
+                            <a class="btn btn-primary w-50" href="product.html">Подробнее</a>
+                            <button class="btn btn-outline-primary w-50" type="button" data-bs-toggle="modal" data-bs-target="#orderModal">
                                 Заказать
                             </button>
                         </div>
@@ -117,36 +138,149 @@
                 </div>
             </div>
 
+            <!-- Альбом 2 -->
             <div class="col-12 col-md-6 col-lg-4">
-                <div class="card h-100 shadow-sm">
+                <div class="card h-100 shadow-sm border-0">
+                    <img src="images/album-2.jpg" class="card-img-top" alt="Комсомольск — Ретро">
                     <div class="card-body d-flex flex-column">
-                        <div class="d-flex justify-content-between align-items-start mb-3">
-                            <h2 class="card-title h5">Товар 3</h2>
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h2 class="card-title h5 mb-0">Комсомольск</h2>
+                            <span class="badge bg-success">Новинка</span>
+                        </div>
+                        <p class="text-primary fw-semibold small mb-1">Ретро (2021)</p>
+                        <p class="card-text text-muted small">
+                            Меланхоличный и ироничный московский инди-поп об эпохе и ностальгии. Лимитированное издание.
+                        </p>
+                        <p class="fw-bold fs-5 mt-auto text-primary">2 990 руб.</p>
+                        <div class="d-flex gap-2">
+                            <a class="btn btn-primary w-50" href="product.html">Подробнее</a>
+                            <button class="btn btn-outline-primary w-50" type="button" data-bs-toggle="modal" data-bs-target="#orderModal">
+                                Заказать
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Альбом 3 -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <img src="images/album-3.jpg" class="card-img-top" alt="Noize MC — Жечь электричество!">
+                    <div class="card-body d-flex flex-column">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h2 class="card-title h5 mb-0">Noize MC</h2>
+                            <span class="badge bg-secondary">В архиве</span>
+                        </div>
+                        <p class="text-primary fw-semibold small mb-1">Жечь электричество! (2011)</p>
+                        <p class="card-text text-muted small">
+                            Культовый концертный лайв-альбом с мощным живым звучанием. Комплект из 2 CD с буклетом.
+                        </p>
+                        <p class="fw-bold fs-5 mt-auto text-primary">1 890 руб.</p>
+                        <div class="d-flex gap-2">
+                            <a class="btn btn-primary w-50" href="product.html">Подробнее</a>
+                            <button class="btn btn-outline-primary w-50" type="button" data-bs-toggle="modal" data-bs-target="#orderModal">
+                                Заказать
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Альбом 4 -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <img src="images/album-4.jpg" class="card-img-top" alt="zhanulka & КАКАЯ РАЗНИЦА — 1749">
+                    <div class="card-body d-flex flex-column">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h2 class="card-title h5 mb-0">zhanulka &amp; КР</h2>
+                            <span class="badge bg-info text-dark">Рекомендуем</span>
+                        </div>
+                        <p class="text-primary fw-semibold small mb-1">1749 (2024)</p>
+                        <p class="card-text text-muted small">
+                            Атмосферный инди-рок мини-альбом о чувствах и взрослении. Коллекционная аудиокассета.
+                        </p>
+                        <p class="fw-bold fs-5 mt-auto text-primary">1 490 руб.</p>
+                        <div class="d-flex gap-2">
+                            <a class="btn btn-primary w-50" href="product.html">Подробнее</a>
+                            <button class="btn btn-outline-primary w-50" type="button" data-bs-toggle="modal" data-bs-target="#orderModal">
+                                Заказать
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Альбом 5 -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <img src="images/album-5.jpg" class="card-img-top" alt="Linkin Park — From Zero">
+                    <div class="card-body d-flex flex-column">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h2 class="card-title h5 mb-0">Linkin Park</h2>
+                            <span class="badge bg-primary">Эксклюзив</span>
+                        </div>
+                        <p class="text-primary fw-semibold small mb-1">From Zero (2024)</p>
+                        <p class="card-text text-muted small">
+                            Возвращение легендарной группы в обновлённом составе. Импортный прозрачно-голубой винил.
+                        </p>
+                        <p class="fw-bold fs-5 mt-auto text-primary">4 990 руб.</p>
+                        <div class="d-flex gap-2">
+                            <a class="btn btn-primary w-50" href="product.html">Подробнее</a>
+                            <button class="btn btn-outline-primary w-50" type="button" data-bs-toggle="modal" data-bs-target="#orderModal">
+                                Заказать
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Альбом 6 -->
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card h-100 shadow-sm border-0">
+                    <img src="images/album-6.jpg" class="card-img-top" alt="Сектор Газа — Гуляй, мужик!">
+                    <div class="card-body d-flex flex-column">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h2 class="card-title h5 mb-0">Сектор Газа</h2>
                             <span class="badge bg-danger">Скидка</span>
                         </div>
-
-                        <p class="card-text text-muted">
-                            Краткое описание третьего учебного товара.
+                        <p class="text-primary fw-semibold small mb-1">Гуляй, мужик! (1992)</p>
+                        <p class="card-text text-muted small">
+                            Классика отечественного панк-рока. Переиздание на тяжёлом 180-граммовом виниле.
                         </p>
-
-                        <p class="fw-bold fs-5 mt-auto">2000 руб.</p>
-
+                        <p class="fw-bold fs-5 mt-auto text-primary">3 990 руб.</p>
                         <div class="d-flex gap-2">
-                            <a class="btn btn-primary" href="product.html">Подробнее</a>
-                            <button class="btn btn-outline-primary" type="button" data-bs-toggle="modal"
-                                data-bs-target="#orderModal">
+                            <a class="btn btn-primary w-50" href="product.html">Подробнее</a>
+                            <button class="btn btn-outline-primary w-50" type="button" data-bs-toggle="modal" data-bs-target="#orderModal">
                                 Заказать
                             </button>
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
-        <section class="container my-5">
+
+        <!-- Самостоятельная доработка: Пагинация Bootstrap -->
+        <nav aria-label="Навигация по каталогу" class="mt-5">
+            <ul class="pagination justify-content-center">
+                <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1" aria-disabled="true">&laquo;</a>
+                </li>
+                <li class="page-item active" aria-current="page">
+                    <a class="page-link" href="#">1</a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#">&raquo;</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Блок FAQ (Accordion) -->
+        <section class="my-5">
             <h2 class="h4 mb-3">Частые вопросы</h2>
 
-            <div class="accordion" id="faqAccordion">
+            <div class="accordion shadow-sm" id="faqAccordion">
                 <div class="accordion-item">
                     <h3 class="accordion-header">
                         <button class="accordion-button" type="button" data-bs-toggle="collapse"
@@ -156,7 +290,8 @@
                     </h3>
                     <div id="faqOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
                         <div class="accordion-body">
-                            Да, в учебном проекте заявка оформляется без регистрации.
+                            Да, в учебном проекте заявка оформляется без регистрации через отдельную страницу
+                            <code>order.html</code> или быстрое всплывающее модальное окно.
                         </div>
                     </div>
                 </div>
@@ -170,17 +305,33 @@
                     </h3>
                     <div id="faqTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                         <div class="accordion-body">
-                            Bootstrap используется для сетки, карточек, форм, навигации, сообщений и модальных окон.
+                            Bootstrap используется во всех компонентах интерфейса: 12-колоночной сетке, карточках,
+                            формах, навигации, модальных окнах и утилитарных классах.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#faqThree" aria-expanded="false" aria-controls="faqThree">
+                            Как подключена библиотека в проекте?
+                        </button>
+                    </h3>
+                    <div id="faqThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Библиотека подключена локально из папки <code>vendor/bootstrap/</code>, что гарантирует
+                            автономность и отказоустойчивость работы сайта без сторонних CDN.
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-
     </main>
 
+    <!-- Модальное окно -->
     <div class="modal fade" id="orderModal" tabindex="-1" aria-labelledby="orderModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
                     <h2 class="modal-title h5" id="orderModalLabel">
@@ -190,45 +341,65 @@
                 </div>
 
                 <div class="modal-body">
-                    <p class="text-muted">
+                    <p class="text-muted small">
                         Оставьте контактные данные, и менеджер свяжется с вами.
                     </p>
 
                     <form>
                         <div class="mb-3">
                             <label for="modal-name" class="form-label">Имя</label>
-                            <input id="modal-name" type="text" class="form-control" required>
+                            <input id="modal-name" type="text" class="form-control" placeholder="Андрей" required>
                         </div>
 
                         <div class="mb-3">
                             <label for="modal-phone" class="form-label">Телефон</label>
-                            <input id="modal-phone" type="tel" class="form-control" required>
+                            <input id="modal-phone" type="tel" class="form-control" placeholder="+7 (900) 000-00-00"
+                                required>
                         </div>
 
                         <div class="form-check mb-3">
                             <input id="modal-agree" class="form-check-input" type="checkbox" required>
                             <label class="form-check-label" for="modal-agree">
-                                Согласен на обработку данных
+                                Согласен на обработку персональных данных
                             </label>
                         </div>
+                        <div class="modal-footer px-0 pb-0">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                Закрыть
+                            </button>
+                            <button type="submit" class="btn btn-primary">
+                                Отправить
+                            </button>
+                        </div>
                     </form>
-                </div>
-
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                        Закрыть
-                    </button>
-                    <button type="button" class="btn btn-primary">
-                        Отправить
-                    </button>
                 </div>
             </div>
         </div>
     </div>
 
+    <!-- Единый подвал -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container">
+            <div class="row align-items-center g-3">
+                <div class="col-12 col-md-6">
+                    <p class="mb-1 fw-bold">Bootstrap Shop &copy; 2026</p>
+                    <p class="mb-0 text-white-50 small">
+                        Выполнил: Савченко Андрей Павлович (ЭФБО-08-25). Учебный проект КР №2.
+                    </p>
+                </div>
 
+                <div class="col-12 col-md-6 text-md-end">
+                    <a class="text-white text-decoration-none me-3" href="index.html">Главная</a>
+                    <a class="text-white text-decoration-none me-3" href="catalog.html">Каталог</a>
+                    <a class="text-white text-decoration-none me-3" href="order.html">Заявка</a>
+                    <a class="text-white text-decoration-none" href="contacts.html">Контакты</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
 </body>
 
 </html>

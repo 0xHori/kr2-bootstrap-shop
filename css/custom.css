@@ -1,5 +1,15 @@
 body {
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+footer {
+  flex-shrink: 0;
 }
 
 .placeholder-box {
@@ -7,10 +17,23 @@ body {
 }
 
 .placeholder-image {
-  min-height: 320px;
+  min-height: 220px;
 }
 
 .card-img-top {
-  height: 180px;
+  aspect-ratio: 1 / 1;
+  width: 100%;
   object-fit: cover;
+}
+
+#heroCarousel .carousel-item {
+  min-height: 280px;
+}
+
+.card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
 }
