@@ -8,13 +8,13 @@
 
     <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/custom.css">
-
 </head>
 
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<body class="bg-light">
+    <!-- Навигационная панель -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Bootstrap Shop</a>
+            <a class="navbar-brand fw-bold" href="index.html">CuteRock Vinyl</a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
                 aria-controls="mainNavbar" aria-expanded="false" aria-label="Переключить навигацию">
@@ -26,98 +26,137 @@
                     <li class="nav-item">
                         <a class="nav-link" href="index.html">Главная</a>
                     </li>
-
                     <li class="nav-item">
                         <a class="nav-link" href="catalog.html">Каталог</a>
                     </li>
-
                     <li class="nav-item">
                         <a class="nav-link" href="product.html">Товар</a>
                     </li>
-
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="order.html">Заявка</a>
                     </li>
-
+                    <li class="nav-item">
+                        <a class="nav-link" href="contacts.html">Контакты</a>
+                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
                             Дополнительно
                         </a>
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu dropdown-menu-end">
                             <li><a class="dropdown-item" href="catalog.html">Все товары</a></li>
                             <li><a class="dropdown-item" href="order.html">Оформить заявку</a></li>
                             <li><a class="dropdown-item" href="index.html#popular">Популярное</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="contacts.html">Контакты и поддержка</a></li>
                         </ul>
+                    </li>
+                    <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+                        <a class="btn btn-outline-light btn-sm d-flex align-items-center gap-2" href="order.html">
+                            <span>Корзина</span>
+                            <span class="badge bg-danger">1</span>
+                        </a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
+
     <main class="container my-5">
         <div class="row justify-content-center">
             <div class="col-12 col-lg-8">
-                <div class="card shadow-sm">
-                    <div class="card-header bg-primary text-white">
-                        <h1 class="h4 mb-0">Форма заявки</h1>
+                <div class="card shadow-sm border-0">
+                    <div class="card-header bg-primary text-white py-3">
+                        <h1 class="h4 mb-0">Оформление заявки</h1>
                     </div>
 
-                    <div class="card-body">
-                        <div class="alert alert-info" role="alert">
-                            Заполните форму. Поля со звёздочкой являются обязательными.
+                    <div class="card-body p-4">
+                        <div class="alert alert-info alert-dismissible fade show" role="alert">
+                            <strong>Обратите внимание:</strong> Заполните все поля, помеченные звёздочкой (*). Заявка
+                            формируется без обязательной авторизации.
+                            <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                aria-label="Закрыть"></button>
                         </div>
 
-                        <form>
+                        <form id="orderForm">
                             <div class="row g-3">
                                 <div class="col-12 col-md-6">
                                     <label for="order-name" class="form-label">Имя *</label>
-                                    <input id="order-name" name="name" type="text" class="form-control" required>
+                                    <input id="order-name" name="name" type="text" class="form-control"
+                                        placeholder="Андрей" required>
                                 </div>
 
                                 <div class="col-12 col-md-6">
                                     <label for="order-email" class="form-label">E-mail *</label>
-                                    <input id="order-email" name="email" type="email" class="form-control" required>
+                                    <input id="order-email" name="email" type="email" class="form-control"
+                                        placeholder="student@mirea.ru" required>
                                 </div>
 
                                 <div class="col-12 col-md-6">
-                                    <label for="order-phone" class="form-label">Телефон</label>
+                                    <label for="order-phone" class="form-label">Телефон *</label>
                                     <div class="input-group">
                                         <span class="input-group-text">+7</span>
                                         <input id="order-phone" name="phone" type="tel" class="form-control"
-                                            placeholder="900 000-00-00">
+                                            placeholder="900 000-00-00" required>
                                     </div>
                                 </div>
 
                                 <div class="col-12 col-md-6">
-                                    <label for="order-product" class="form-label">Товар</label>
-                                    <select id="order-product" name="product" class="form-select">
-                                        <option selected>Выберите товар</option>
-                                        <option value="product-1">Товар 1</option>
-                                        <option value="product-2">Товар 2</option>
-                                        <option value="product-3">Товар 3</option>
+                                    <label for="order-product" class="form-label">Выбор товара *</label>
+                                    <select id="order-product" name="product" class="form-select" required>
+                                        <option value="" selected disabled>Выберите альбом для заказа</option>
+                                        <option value="dora">Дора — «Боже, храни кьют-рок» (3 490 руб.)</option>
+                                        <option value="komsomolsk">Комсомольск — «Ретро» (2 990 руб.)</option>
+                                        <option value="noize">Noize MC — «Жечь электричество!» (1 890 руб.)</option>
+                                        <option value="zhanulka">zhanulka &amp; КР — «1749» (1 490 руб.)</option>
+                                        <option value="linkin-park">Linkin Park — «From Zero» (4 990 руб.)</option>
+                                        <option value="sektor">Сектор Газа — «Гуляй, мужик!» (3 990 руб.)</option>
                                     </select>
                                 </div>
 
+                                <!-- Способ доставки -->
                                 <div class="col-12">
-                                    <label for="order-comment" class="form-label">Комментарий</label>
-                                    <textarea id="order-comment" name="comment" class="form-control"
-                                        rows="4"></textarea>
+                                    <label class="form-label d-block">Способ доставки</label>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="deliveryMethod"
+                                            id="deliveryCourier" value="courier" checked>
+                                        <label class="form-check-label" for="deliveryCourier">Курьерская
+                                            доставка</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="deliveryMethod"
+                                            id="deliveryPickup" value="pickup">
+                                        <label class="form-check-label" for="deliveryPickup">Самовывоз из пункта</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="deliveryMethod"
+                                            id="deliveryDigital" value="digital">
+                                        <label class="form-check-label" for="deliveryDigital">Электронная копия</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-12">
+                                    <label for="order-comment" class="form-label">Комментарий к заказу</label>
+                                    <textarea id="order-comment" name="comment" class="form-control" rows="3"
+                                        placeholder="Укажите пожелания по заказу или адрес доставки"></textarea>
                                 </div>
 
                                 <div class="col-12">
                                     <div class="form-check">
                                         <input id="order-agree" class="form-check-input" type="checkbox" required>
                                         <label class="form-check-label" for="order-agree">
-                                            Я согласен на обработку данных *
+                                            Я согласен на обработку персональных данных *
                                         </label>
                                     </div>
                                 </div>
 
-                                <div class="col-12 d-flex gap-2">
-                                    <button class="btn btn-primary" type="submit">
+                                <div class="col-12 d-flex gap-2 pt-2">
+                                    <button class="btn btn-primary btn-lg px-4" type="submit">
                                         Отправить заявку
                                     </button>
-                                    <button class="btn btn-outline-secondary" type="reset">
+                                    <button class="btn btn-outline-secondary btn-lg" type="reset">
                                         Очистить
                                     </button>
                                 </div>
@@ -129,9 +168,29 @@
         </div>
     </main>
 
+    <!-- Единый подвал -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container">
+            <div class="row align-items-center g-3">
+                <div class="col-12 col-md-6">
+                    <p class="mb-1 fw-bold">Bootstrap Shop &copy; 2026</p>
+                    <p class="mb-0 text-white-50 small">
+                        Выполнил: Савченко Андрей Павлович (ЭФБО-08-25). Учебный проект КР №2.
+                    </p>
+                </div>
 
+                <div class="col-12 col-md-6 text-md-end">
+                    <a class="text-white text-decoration-none me-3" href="index.html">Главная</a>
+                    <a class="text-white text-decoration-none me-3" href="catalog.html">Каталог</a>
+                    <a class="text-white text-decoration-none me-3" href="order.html">Заявка</a>
+                    <a class="text-white text-decoration-none" href="contacts.html">Контакты</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
 </body>
 
 </html>

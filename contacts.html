@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Контакты — Bootstrap Shop</title>
+
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+
+<body class="bg-light">
+    <!-- Навигационная панель -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">CuteRock Vinyl</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+                aria-controls="mainNavbar" aria-expanded="false" aria-label="Переключить навигацию">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNavbar">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Главная</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="catalog.html">Каталог</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="product.html">Товар</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="order.html">Заявка</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="contacts.html">Контакты</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Дополнительно
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><a class="dropdown-item" href="catalog.html">Все товары</a></li>
+                            <li><a class="dropdown-item" href="order.html">Оформить заявку</a></li>
+                            <li><a class="dropdown-item" href="index.html#popular">Популярное</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="contacts.html">Контакты и поддержка</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+                        <a class="btn btn-outline-light btn-sm d-flex align-items-center gap-2" href="order.html">
+                            <span>Корзина</span>
+                            <span class="badge bg-danger">1</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-5">
+        <div class="mb-4">
+            <h1 class="h2 mb-1">Контакты и поддержка</h1>
+            <p class="text-muted">Свяжитесь с нами удобным способом или оставьте вопрос через форму обратной связи.</p>
+        </div>
+
+        <div class="row g-4">
+            <!-- Контактная информация -->
+            <div class="col-12 col-lg-5">
+                <div class="card h-100 shadow-sm border-0">
+                    <div class="card-body p-4">
+                        <h2 class="h5 text-primary mb-3">Офис проекта</h2>
+                        <ul class="list-unstyled mb-4">
+                            <li class="mb-3">
+                                <strong>Адрес:</strong><br>
+                                <span class="text-muted">г. Москва, пр. Вернадского, 78</span>
+                            </li>
+                            <li class="mb-3">
+                                <strong>Режим работы:</strong><br>
+                                <span class="text-muted">Пн–Сб: с 09:00 до 18:00, Вс: концерты</span>
+                            </li>
+                            <li class="mb-3">
+                                <strong>Электронная почта:</strong><br>
+                                <a href="mailto:support@xhori.ru" class="text-decoration-none">support@xhori.ru</a>
+                            </li>
+                            <li>
+                                <strong>Телефон горячей линии:</strong><br>
+                                <a href="tel:+74995300809" class="text-decoration-none">+7 (499) 530-08-09</a>
+                            </li>
+                        </ul>
+
+                        <div class="alert alert-secondary mb-0 small" role="alert">
+                            Проект выполнен в рамках контрольной работы №2 по дисциплине «Фронтенд и бэкенд разработка».
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Форма обратной связи -->
+            <div class="col-12 col-lg-7">
+                <div class="card shadow-sm border-0">
+                    <div class="card-header bg-white py-3">
+                        <h2 class="h5 mb-0">Форма обратной связи</h2>
+                    </div>
+                    <div class="card-body p-4">
+                        <form>
+                            <div class="row g-3">
+                                <div class="col-12 col-md-6">
+                                    <label for="contact-name" class="form-label">Ваше имя *</label>
+                                    <input type="text" id="contact-name" class="form-control" required
+                                        placeholder="Андрей">
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label for="contact-email" class="form-label">Email для ответа *</label>
+                                    <input type="email" id="contact-email" class="form-control" required
+                                        placeholder="example@mail.ru">
+                                </div>
+                                <div class="col-12">
+                                    <label for="contact-subject" class="form-label">Тема сообщения</label>
+                                    <select id="contact-subject" class="form-select">
+                                        <option selected>Вопрос по каталогу и товарам</option>
+                                        <option value="order">Статус оформленной заявки</option>
+                                        <option value="tech">Технический вопрос по верстке</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label for="contact-message" class="form-label">Текст сообщения *</label>
+                                    <textarea id="contact-message" class="form-control" rows="4" required
+                                        placeholder="Напишите ваш вопрос..."></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary px-4">
+                                        Отправить сообщение
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Единый подвал -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container">
+            <div class="row align-items-center g-3">
+                <div class="col-12 col-md-6">
+                    <p class="mb-1 fw-bold">Bootstrap Shop &copy; 2026</p>
+                    <p class="mb-0 text-white-50 small">
+                        Выполнил: Савченко Андрей Павлович (ЭФБО-08-25). Учебный проект КР №2.
+                    </p>
+                </div>
+
+                <div class="col-12 col-md-6 text-md-end">
+                    <a class="text-white text-decoration-none me-3" href="index.html">Главная</a>
+                    <a class="text-white text-decoration-none me-3" href="catalog.html">Каталог</a>
+                    <a class="text-white text-decoration-none me-3" href="order.html">Заявка</a>
+                    <a class="text-white text-decoration-none" href="contacts.html">Контакты</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
